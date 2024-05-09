@@ -1,28 +1,0 @@
->L.
-14531\
-14532.log_on
-14533 LDA #0
-14534 STA buff_ptr \ Scrap output
-14535 STA rx_ptr
-14536 STA max_ptr
-14537 STA rx_seq \ Zero both sequence numbers
-14538 LDA #&80
-14539 STA txcb
-14540 STA waiting_flag \ We haven't had a poll yet
-14541 LDA #&34 \ Delete any existing RxCB
-14542 LDX raw_rxcb
-14543 JSR osbyte
-14544\
-14545 LDA block_buffer \ Station number (lo)
-14546 STA client_stn
-14547 STA source_stn
-14548 STA rx_stn
-14549 LDA block_buffer+1 \ Hi
-14550 STA client_stn+1
-14551 STA source_stn+1
-14552 STA rx_stn+1
-14553 JSR open_rx
-14554\
-14555 JMP exit
->*SPOOL
-

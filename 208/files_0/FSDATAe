@@ -1,1 +1,0 @@
-{ FSDATAe  File Server data management }PROCEDURE Init_disc; EXTERNAL;PROCEDURE Empty_cache; EXTERNAL;PROCEDURE Cache_entry(desired:block_descrip;read_in:Boolean); EXTERNAL;{Sets <c_ent>,<error>}

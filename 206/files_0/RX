@@ -1,57 +1,0 @@
->L.
-10000REM RXFAST - receive half of 'Fast Remote'
-10001REM A.R.Gordon 28/6/84
-10002 
-10003 osword=&FFF1
-10004 osbyte=&FFF4
-10005 osrdch=&FFE0
-10006 osascii=&FFE3
-10007 oswrch=&FFEE
-10008 oscli=&FFF7
-10009 
-10010 wrchvec=&20E
-10011 rdchvec=&210
-10012 eventvec=&220
-10013 
-10014 buff_size=64
-10015 
-10016 DIM Q% 1000
-10017 FOR Z=4 TO 7 STEP 3
-10018 IF Z=7 THEN TRACE ON
-10019 P%=Q%
-10020 O%=Q%
-10021 [OPT Z
-10022\
-10023.termloop
-10024 JSR conin
-10025 JSR oswrch
-10026 JMP termloop
-10027\
-10028\
-10029\
-10030.init
-10031 LDA #0
-10032 STA param_blk
-10033 STA rx_seq
-10034 STA max_ptr \ No chars in buffer at all.
-10035 STA rx_waiting
-10036 JSR transmit_proc \ Send log-on request.
-10037 LDA#1
-10038 STA param_blk
-10039 JSR open_rx
-10040RTS
-10041\
-10042\
-10043\
-10044.open_rx
-10045 LDA#0 \ Reason code for open
-10046 STA raw_rxcb
-10047 LDX# (raw_rxcb AND &FF)
-10048 LDY# (raw_rxcb DIV &100)
-10049 LDA #&11
-10050 JMP osword \ JSR then RTS
-10051\
-10052\
-10053\
-10054\
-10055.

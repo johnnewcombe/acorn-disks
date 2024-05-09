@@ -1,1 +1,0 @@
-{ FSP3e  File Server Procedures & Functions }Procedure Star_Sdisc(VAR cmd_text:min_string); EXTERNAL;Procedure Star_dir(VAR cmd_text:min_string); EXTERNAL;FUNCTION User_ok:BOOLEAN; EXTERNAL;Procedure Do_logoff; EXTERNAL;Procedure I_am(VAR cmd_text:min_string); EXTERNAL;PROCEDURE Log_off; EXTERNAL;PROCEDURE Starcmd; EXTERNAL;

@@ -1,1 +1,0 @@
-{ FSP2E  File Server Procedures & Functions }PROCEDURE Star_info(VAR fname:min_string); EXTERNAL;PROCEDURE Star_delete(VAR fname:min_string); EXTERNAL;PROCEDURE Save; EXTERNAL;PROCEDURE Load; EXTERNAL;

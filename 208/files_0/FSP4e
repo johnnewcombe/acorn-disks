@@ -1,1 +1,0 @@
-{ FSP4e  File Server Procedures & Functions }PROCEDURE Read_info; EXTERNAL;PROCEDURE User_envir; EXTERNAL;PROCEDURE Disc_info; EXTERNAL;PROCEDURE Write_info; EXTERNAL;PROCEDURE Free_space; EXTERNAL;PROCEDURE Cat; EXTERNAL;PROCEDURE Acct_space; EXTERNAL;

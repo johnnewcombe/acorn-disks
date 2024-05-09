@@ -1,43 +1,0 @@
->L.
- 1000.send_it
- 1001 STA txcb \ Insert ctrl code
- 1002 LDA #(buffer AND &FF)
- 1003 ADC buff_ptr \ NB state of carry on entry
- 1004 STA buff_end_loc
- 1005 LDA #(buffer DIV &100)
- 1006 ADC #0
- 1007 STA buff_end_loc+1
- 1008\
- 1009 LDY #10 \ Retry counter
- 1010.retry
- 1011 TYA
- 1012 PHA
- 1013 LDX# (txcb AND &FF)
- 1014 LDY# (txcb DIV &100)
- 1015 LDA# &10 \ Transmit
- 1016 JSR osword
- 1017\
- 1018.tx_poll
- 1019 LDA #&32 \ Poll txcb
- 1020 JSR osbyte
- 1021 PLA \ Get back retry cntr in case reqd
- 1022 TAY
- 1023 TXA \ Result
- 1024 BMI tx_poll \ Not finished transmitting yet
- 1025 AND# &40 \ Test for success
- 1026 BEQ finish_event
- 1027 DEY \ Retry reqd - have we had too many ?
- 1028 BNE retry
- 1029.finish_event
- 1030 LDA #0 \ In both cases, the buffer is now empty
- 1031 STA buff_ptr
- 1032.exit
- 1033 PLA
- 1034 TAY
- 1035 PLA
- 1036 TAX
- 1037 PLA
- 1038 PLP
- 1039RTS
->*SPOOL
-

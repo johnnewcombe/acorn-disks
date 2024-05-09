@@ -1,1 +1,0 @@
-{ FSRNDE  File Server random access }PROCEDURE Set_ptr(VAR fbk:Fcb;new_ptr:Dbl_word;VAR error:Byte); EXTERNAL;  
