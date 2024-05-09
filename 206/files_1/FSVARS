@@ -1,0 +1,1 @@
+{File FSVARS}VAR mainRX:stdRX;mainTX:stdTX;dummybyte,blockno:BYTE;client_stn,dummy:INTEGER;fvar:FILE of CHAR;big_buffer:buffer;
