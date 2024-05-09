@@ -1,0 +1,38 @@
+>L.
+   10 *KEY 0 "RUN|M"
+   20 *KEY 10 "OLD|ML.|M"
+   30 DIM macro$(255)
+   35 
+   40 ddr=&FE62
+   50 data=&FE60
+   60 ?ddr=&FF
+   70 delay=0
+   75 value=0
+   80 INPUT "COMMAND : "COMMAND$
+   90 IF COMMAND$<>"" PROCeval(COMMAND$)
+  100 GOTO 80
+  110 DEF PROCdisplay(value)
+  120 @%=2
+  130 PRINT "Value :";
+  140 FOR bit = 0 TO 7
+  150 PRINT SGN(value AND 2^bit);
+  160 NEXT
+  170 PRINT
+  180 ?data=value
+  190ENDPROC
+  200 DEF PROCeval(command$)
+  210 LOCAL pointer,charval
+  220 FOR pointer=1 TO LEN(command$)
+  225 NOW=TIME:REPEAT :UNTIL TIME>=NOW+delay
+  230 charval=ASC(MID$(command$,pointer,1))
+  240 PRINT'"Action : ";CHR$(charval);" ";
+  250 IF charval>&2F AND charval<&3A THEN value=value EOR 2^(charval-&30):PROCdisplay(value):GOTO 300
+  255 IF charval>&1F AND charval<&2A THEN value=value EOR 2^(charval-&20):PRINT:GOTO 300   
+  260 IF charval=ASC("M") THEN PRINT "Define macro"'"Key : ";:charval=GET:PRINT CHR$(charval):INPUT "String : "macro$(charval):GOTO 300
+  270 IF charval=ASC("D") THEN INPUT "Delay time : "delay:GOTO 300
+  280 REM unrecognised, so it's a macro
+  290 IF macro$(charval)="" THEN PRINT "Macro not defined " ELSE  PROCeval(macro$(charval))
+  300 NEXT pointer
+  310 ENDPROC
+>*SPOOL
+

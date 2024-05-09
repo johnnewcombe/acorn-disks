@@ -1,0 +1,1 @@
+PROGRAM Test_handTYPEbyte=0..255;VARa:byte;Function FCB_no(z:byte);External;Function Handle(z:byte);External;BEGINRepeatWrite('Handle no');Readln(a);Writeln('Translates to:',Fcb_no(a));Write('FCB no');Readln(a);Writeln('Translate to handle:',Handle(a));UNTIL FALSEEND.
