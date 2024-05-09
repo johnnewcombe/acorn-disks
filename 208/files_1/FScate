@@ -1,0 +1,1 @@
+{ FScate  File Server Procedures & Functions }PROCEDURE Read_info; EXTERNAL;PROCEDURE User_envir; EXTERNAL;PROCEDURE Cat; EXTERNAL;

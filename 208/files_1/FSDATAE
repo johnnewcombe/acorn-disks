@@ -1,0 +1,1 @@
+{ FSDATAE  File Server data management }PROCEDURE Init_disc; EXTERNAL;FUNCTION Cache_entry(desired:block_descrip;read_in:Boolean;VAR error:Byte)  :BYTE; EXTERNAL;

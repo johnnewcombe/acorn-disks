@@ -1,7 +1,7 @@
 # Disk Images from Andrew Gordon (Acorn & SJ Research)
 
 
-Please note that only successfully imaged disks have been published here, i.e. disks where all data has been recovered. For information about other images, contact _**john@glasstty.com**_.
+Please note that some disks published here may have imaging errors, Please see Section 10 for details. For any other information regarding these images, contact _**john@glasstty.com**_.
 
 Whilst many of these disk images are Acorn DFS format disks, not all are, see below.
 
