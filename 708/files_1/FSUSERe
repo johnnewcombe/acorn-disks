@@ -1,0 +1,1 @@
+{ FSUSERe  File Server User Management }PROCEDURE Star_pass(VAR cmd_text:Min_string); EXTERNAL;PROCEDURE Read_users; EXTERNAL;PROCEDURE Find_user; EXTERNAL;FUNCTION User_ok:BOOLEAN; EXTERNAL;PROCEDURE Set_opt; EXTERNAL;Procedure I_am(VAR cmd_text:min_string); EXTERNAL;PROCEDURE Log_off; EXTERNAL;

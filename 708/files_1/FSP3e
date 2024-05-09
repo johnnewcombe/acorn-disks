@@ -1,0 +1,1 @@
+{ FSP3e  File Server Procedures & Functions }FUNCTION Get_num(VAR aS:min_string;VAR found:Boolean; base:Byte; max_value:Word):Word; EXTERNAL;Procedure Star_Sdisc(VAR cmd_text:min_string); EXTERNAL;Procedure Star_dir(VAR cmd_text:min_string); EXTERNAL;PROCEDURE Cdir; EXTERNAL;PROCEDURE Starcmd; EXTERNAL;PROCEDURE Read_time; EXTERNAL;PROCEDURE Set_time; EXTERNAL;

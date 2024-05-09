@@ -1,0 +1,1 @@
+*TV 0,1MODE 0*FX 7 4*FX 8 1*FX 156 8 227REM CUDN 354 308   (1200 baud)REM      66401    (110..300 baud)REM BTG 01 837 2844REM PSS 01 407 8344      <cr><cr>V5<cr>NCANTAB324UEM,R,G01-A222339399REM                      ^pRESET ->break,  ^pCLEAR ->drop line*TERM

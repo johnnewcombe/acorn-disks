@@ -1,0 +1,1 @@
+{ FSMISCMiscellaneous routines which have been made redundant by assembler equivalents}PROCEDURE M_dec_B(number:Byte; address:Word);{Put two digit decimal number into memory at <address>, in ASCII Leading zero is supplied if reqd}BEGINPoke(address,Ord('0')+number DIV 10);Poke(address+1,Ord('0')+number MOD 10)END;
